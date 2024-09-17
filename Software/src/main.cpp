@@ -1,24 +1,17 @@
+//*****************************************************************************//
+// Programmer: Joseph __Vitale                                                 //
+// Start Date: 09/16/2024                                                      //
+// Phase #1 Completion Date:  n/a                                              //
+// add later        //
+//*****************************************************************************//
 #include <Arduino.h>
 #include <Button.h>
 #include <Buzzer.h>
 #include <Scale.h>
-
+#include <avr/io.h>
+#include <avr/interrupt.h>
 // put function declarations here:
 Scale Scale0;
-
-void Scale::init_scale(int scale_pin, float calibrationFactor)
-{
-  scale_pin_number = scale_pin;
-  calFactor = calibrationFactor;
-  pinMode(scale_pin_number, INPUT);
-}
-
-void Scale::r_scale_raw()
-{
-  float rawscalevalue = analogRead(scale_pin_number); // private variable on pinumber
-  float weight = rawscalevalue * (calFactor)-30;      // Convert raw input to weight
-  Serial.println(weight);
-}
 
 void setup()
 {
