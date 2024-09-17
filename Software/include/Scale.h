@@ -1,22 +1,10 @@
 #include <Arduino.h>
-class ScaleInput
+class Scale
 {
 private:
-    int pin;                 // Analog input pin for the scale
-    float calibrationFactor; // Calibration factor for converting raw input to weight
+    int scale_pin_number; // Analog input pin for the scale
+    float calFactor;      // Calibration factor for converting raw input to weight
 public:
-    // Constructor
-    ScaleInput(int inputPin, float calFactor)
-    {
-        pin = inputPin;
-        calibrationFactor = calFactor;
-    }
-
-    // Function to read and return the weight in grams
-    float getWeight()
-    {
-        int rawValue = analogRead(pin);              // Read raw input from scale
-        float weight = rawValue * calibrationFactor; // Convert raw input to weight
-        return weight;
-    }
+    void r_scale_raw();
+    void init_scale(int scale_pin, float calfactor);
 };
