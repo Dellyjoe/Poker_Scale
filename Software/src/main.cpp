@@ -16,8 +16,9 @@ Scale Scale0;
 void setup()
 {
   // put your setup code here, to run once:
-  Serial.begin(9600);          // initialize Serial Monitor with baud rate of 9600
-                               // ********************Inputs**********************************//
+  Serial.begin(9600); // initialize Serial Monitor with baud rate of 9600
+
+  // ********************Inputs**********************************//
   Scale0.init_scale(19, 1.0f); // setting scale to pin 19
   //*********************Outputs*********************************//
   pinMode(13, OUTPUT);
